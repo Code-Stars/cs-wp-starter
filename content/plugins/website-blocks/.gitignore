@@ -1,0 +1,11 @@
+# ignore idea contents
+.idea
+
+# ignore node dependency directories
+node_modules
+
+# ignore our config
+wp-config.php
+
+# ignore the wordpress core
+wordpress/*

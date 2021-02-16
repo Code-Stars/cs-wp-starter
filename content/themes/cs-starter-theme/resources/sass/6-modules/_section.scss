@@ -1,0 +1,43 @@
+.section {
+  display: block;
+
+  &--margin {
+    margin: rhythm(2) 0;
+  }
+
+  &--padding {
+    padding: rhythm(2) 0;
+  }
+
+  &--alt {
+    background-color: $theme-color-5;
+
+    .title {
+      color: #fff;
+    }
+  }
+}
+
+.section--light {
+  background-color: #fff;
+}
+
+.section--dark {
+  background-color: darken($theme-color-5, 20%);
+
+  .title {
+    color: #fff;
+  }
+}
+
+@include screen('sm') {
+  .section {
+    &--margin {
+      margin: rhythm(4) 0;
+    }
+
+    &--padding {
+      padding: rhythm(4) 0;
+    }
+  }
+}

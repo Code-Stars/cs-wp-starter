@@ -1,0 +1,11 @@
+.fc-maps {
+
+  &__frame {
+    display: block;
+    width: 100%;
+  }
+}
+
+@include screen('sm') {
+
+}

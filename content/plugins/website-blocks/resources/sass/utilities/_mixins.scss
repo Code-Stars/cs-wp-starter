@@ -1,0 +1,161 @@
+@mixin screen($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin box-shadow() {
+  -webkit-box-shadow: 8px 13px 22px -3px rgba(181, 181, 181, 0.57);
+  -moz-box-shadow: 8px 13px 22px -3px rgba(181, 181, 181, 0.57);
+  box-shadow: 8px 13px 22px -3px rgba(181, 181, 181, 0.57);
+}
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+  // example: text-shadow: (2px 2px 0 rgba(40, 40, 40, 1));
+  text-shadow: $x $y $blur $color;
+}
+
+@mixin box-shadow-alt {
+  -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+@mixin opacity($opacity: 0.5) {
+  filter: alpha(opacity=$opacity*100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=#{$opacity*100});
+  opacity: $opacity;
+}
+
+@mixin transition($prop: opacity, $speed: 1s) {
+  -webkit-transition: $prop $speed ease-in-out;
+  -moz-transition: $prop $speed ease-in-out;
+  -ms-transition: $prop $speed ease-in-out;
+  -o-transition: $prop $speed ease-in-out;
+  transition: $prop $speed ease-in-out;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box; /* stops bg color from leaking outside the border: */
+}
+
+@mixin background-size($background-size) {
+  -webkit-background-size: $background-size;
+  -moz-background-size: $background-size;
+  -o-background-size: $background-size;
+  background-size: $background-size;
+}
+
+/**
+ * Sets a cross-browser background color with opacity.
+ *
+ * @param {string} $color   The hexadecimal value for the color
+ * @param {int} $opacity    An integer for the opacity
+ */
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$color, endColorstr=$color);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=$color, endColorstr=$color)";
+}
+
+/// Test if `$value` is a valid direction
+/// @param {*} $value - Value to test
+/// @return {Bool}
+@function is-direction($value) {
+  $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+  @return $is-keyword or $is-angle;
+}
+
+/// Convert a direction to legacy syntax
+/// @param {Keyword | Angle} $value - Value to convert
+/// @require {function} is-direction
+/// @require {function} convert-angle
+/// @throw Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be a direction.;
+@function legacy-direction($value) {
+  @if is-direction($value) == false {
+    @error "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be a direction.";
+  }
+
+  $conversion-map: (
+          to top : bottom,
+          to top right : bottom left,
+          to right top : left bottom,
+          to right : left,
+          to bottom right : top left,
+          to right bottom : left top,
+          to bottom : top,
+          to bottom left : top right,
+          to left bottom : right top,
+          to left : right,
+          to left top : right bottom,
+          to top left : bottom right
+  );
+
+  @if map-has-key($conversion-map, $value) {
+    @return map-get($conversion-map, $value);
+  }
+
+  @return 90deg - $value;
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@mixin scale($ratio, $orientation: left) {
+  -webkit-transform: scale($ratio); /* Saf3.1+, Chrome */
+  -moz-transform: scale($ratio); /* FF3.5+ */
+  -ms-transform: scale($ratio); /* IE9 */
+  -o-transform: scale($ratio); /* Opera 10.5+ */
+  transform: scale($ratio);
+  transform-origin: $orientation;
+}
+
+@mixin box-sizing($value:border-box) {
+  box-sizing: $value;
+  -moz-box-sizing: $value;
+  -webkit-box-sizing: $value;
+}
+
+@mixin grayscale($value) {
+  -webkit-filter: #{"grayscale(#{$value})"};
+  -moz-filter: #{"grayscale(#{$value})"};
+  filter: #{"grayscale(#{$value})"};
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+  /* Chrome/Opera/Safari */
+  &:-moz-placeholder {
+    @content
+  }
+  /* Firefox 19+ */
+  &::-moz-placeholder {
+    @content
+  }
+  /* IE 10+ */
+  &:-ms-input-placeholder {
+    @content
+  }
+  /* Firefox 18- */
+}

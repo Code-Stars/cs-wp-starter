@@ -1,0 +1,50 @@
+.page {
+
+  &__header {
+    padding-top: rhythm(2);
+    padding-bottom: rhythm(2);
+  }
+  
+  &__content {
+    h1 {
+      @include title-h1();
+      margin-bottom: rhythm(2);
+    }
+
+    h2 {
+      @include title-h2();
+      margin-bottom: rhythm(1);
+    }
+
+    h3 {
+      @include title-h3();
+      margin-bottom: rhythm(1/2);
+    }
+
+    h4 {
+      @include title-h4();
+      margin-bottom: rhythm(1/4);
+    }
+
+    h5 {
+      @include title-h5();
+      margin-bottom: rhythm(1/4);
+    }
+
+    h6 {
+      @include title-h6();
+      margin-bottom: rhythm(1/4);
+    }
+
+    p {
+      display: block;
+      margin-bottom: rhythm(1/2);
+    }
+
+    ul {
+      @extend .trailer-xs;
+      list-style: circle;
+      list-style-position: inside;
+    }
+  }
+}

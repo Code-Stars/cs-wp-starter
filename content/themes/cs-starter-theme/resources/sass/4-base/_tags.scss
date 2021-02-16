@@ -1,0 +1,46 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $font-initial-family;
+  background-color: $font-alt-color-1;
+  color: $font-initial-color;
+  font-size: em(16px);
+  line-height: $font-initial-line-height;
+  font-weight: $font-initial-weight;
+  min-height: 100%;
+}
+
+a {
+  color: $main-anchor-color;
+  font-weight: 400;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: lighten($theme-color-1, 10%);
+    text-decoration: none;
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: $font-alt-color-2;
+  opacity: 0.3;
+}
+
+strong {
+  @extend .strong;
+}
+
+::selection {
+  background: $theme-color-1; /* WebKit/Blink Browsers */
+  color: #fff;
+}
+
+::-moz-selection {
+  background: $theme-color-1; /* Gecko Browsers */
+  color: #fff;
+}

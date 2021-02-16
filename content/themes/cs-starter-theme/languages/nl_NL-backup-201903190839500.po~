@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CS Starter Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-18 14:14+0000\n"
+"PO-Revision-Date: 2019-03-18 14:43+0000\n"
+"Last-Translator: Floris <floris@webconstruction.nl>\n"
+"Language-Team: Nederlands\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.1; wp-5.1.1"
+
+#: inc/template-functions.php:16 inc/template-functions.php:26
+#: inc/template-functions.php:49
+msgid "Add widgets here."
+msgstr "Voeg widgets hier toe."
+
+#. Name of the template
+msgid "Cases"
+msgstr "Cases"
+
+#. Description of the theme
+msgid "Codestars Wordpress Starter Theme"
+msgstr "Codestars Wordpress Starter Theme"
+
+#: template-parts/post/content.php:32 template-parts/post/single.php:33
+#: template-parts/case/single.php:37
+msgid "Continue reading"
+msgstr "Lees verder"
+
+#. Name of the theme
+msgid "CS Starter Theme"
+msgstr "CS Starter Theme"
+
+#: 404.php:25
+#, php-format
+msgid ""
+"Deze pagina kon niet worden gevonden. Klik %1$s om terug te gaan naar de "
+"home."
+msgstr ""
+
+#: 404.php:24
+msgid "here"
+msgstr "hier"
+
+#. Name of the template
+msgid "Home"
+msgstr "Voorpagina"
+
+#: template-parts/search/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/search/content-none.php:14
+msgid "Nothing Found"
+msgstr "Niets gevonden."
+
+#: template-parts/page/content.php:40 template-parts/post/content.php:42
+#: template-parts/post/single.php:43 template-parts/case/single.php:47
+msgid "Pages:"
+msgstr "Pagina's:"
+
+#. %s: post author.
+#: inc/template-tags.php:35
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "door %s"
+
+#. %s: post date.
+#: inc/template-tags.php:29
+#, php-format
+msgctxt "post date"
+msgid "Posted on: %s"
+msgstr "Geplaatst op: %s"
+
+#. 1: list of categories.
+#: inc/template-tags.php:56
+#, php-format
+msgid "Posted in: %1$s"
+msgstr "Geplaatst in: %1$s"
+
+#: template-parts/case/content.php:26
+msgid "Read more"
+msgstr "Lees meer"
+
+#. 1: link to WP admin new post page.
+#: template-parts/search/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: searchform.php:11
+msgid "Search"
+msgstr "Zoek"
+
+#. %s: search query.
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Zoek resultaten voor:  %s"
+
+#: template-parts/search/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#. 1: list of tags.
+#: inc/template-tags.php:63
+#, php-format
+msgid "Tagged: %1$s"
+msgstr "Tagged: %1$s"

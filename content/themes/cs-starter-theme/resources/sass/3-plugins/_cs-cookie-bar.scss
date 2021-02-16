@@ -1,0 +1,31 @@
+.cs-cookie-bar {
+  position: fixed;
+  display: table;
+  vertical-align: middle;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ccc;
+  padding: 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: em(14px);
+  z-index: 10;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    display: inline-block;
+    color: #ccc;
+  }
+
+  .button {
+    vertical-align: middle;
+    color: #fff;
+    max-width: none;
+    width: 100%;
+  }
+}

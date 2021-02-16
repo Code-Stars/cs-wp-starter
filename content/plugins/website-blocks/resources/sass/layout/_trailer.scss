@@ -1,0 +1,31 @@
+.trailer {
+  padding-bottom: rhythm(1);
+
+  &--third {
+    padding-bottom: rhythm(1/3);
+  }
+
+  &--half {
+    padding-bottom: rhythm(1/2);
+  }
+
+  &--two-third {
+    padding-bottom: rhythm(2/3);
+  }
+
+  &--double {
+    padding-bottom: rhythm(2);
+  }
+
+  &--large {
+    padding-bottom: rhythm(3);
+  }
+
+  &-outside {
+    margin-bottom: rhythm(1);
+  }
+
+  &-outside--double {
+    margin-bottom: rhythm(2);
+  }
+}

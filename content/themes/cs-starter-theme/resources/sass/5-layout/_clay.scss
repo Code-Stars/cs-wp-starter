@@ -1,0 +1,17 @@
+@include screen('xs') {
+  .stretch-xs {
+    width: 100%;
+  }
+}
+
+@include screen('sm') {
+  .stretch-sm {
+    width: 100%;
+  }
+}
+
+@include screen('md') {
+  .stretch-md {
+    width: 100%;
+  }
+}

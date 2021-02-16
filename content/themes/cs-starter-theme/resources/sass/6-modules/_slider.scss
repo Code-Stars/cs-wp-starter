@@ -1,0 +1,16 @@
+.slider {
+  @extend .bleed-xs-x0-5;
+  position: relative;
+
+  &__item {
+    @include background-size(cover);
+    background-position: center;
+    height: 400px;
+
+
+  }
+
+  &__item img {
+    display: none;
+  }
+}

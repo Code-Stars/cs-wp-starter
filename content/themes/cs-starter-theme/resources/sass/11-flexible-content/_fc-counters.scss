@@ -1,0 +1,36 @@
+.fc-counters {
+  clear: both;
+
+  &__icon {
+    float: left;
+    width: 15%;
+    text-align: center;
+    vertical-align: top;
+
+    i {
+      display: block;
+      font-size: em(40px);
+      color: $theme-color-1;
+      margin-top: 6px;
+      vertical-align: top;
+    }
+  }
+
+  &__content {
+    float: left;
+    width: 80%;
+  }
+
+  &__count {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: em(35px);
+    vertical-align: top;
+    color: $theme-color-3;
+  }
+
+  &__title {
+    font-size: em(16px);
+  }
+}

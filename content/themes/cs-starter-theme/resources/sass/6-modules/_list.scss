@@ -1,0 +1,11 @@
+ul.list--social {
+  li {
+    display: inline-block;
+    padding: 0;
+
+    .fas, .fab, .fa {
+      font-size: em(20px);
+      margin: 0 rhythm(1/4);
+    }
+  }
+}

@@ -1,0 +1,96 @@
+// slick dots
+.slick-dots {
+  text-align: center;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+}
+
+.slick-dots li button {
+  position: relative;
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.slick-dots li button:before {
+  @include opacity(0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '•';
+  color: #000;
+  font-size: 40px;
+  width: 30px;
+}
+
+.slick-dots li.slick-active button:before {
+  @include opacity(1);
+}
+
+// slick arrow
+.slick-arrow {
+  position: absolute;
+  font-size: 0;
+  top: auto;
+  bottom: rhythm(1);
+  line-height: 25px;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  cursor: pointer;
+  background-color: $theme-color-1;
+  text-align: center;
+  z-index: 10;
+
+  &:before {
+    font-family: 'Font Awesome\ 5 Free', sans-serif;
+    color: #fff;
+    font-weight: 900;
+    font-size: 15px;
+  }
+}
+
+.slick-arrow.slick-prev {
+  left: rhythm(1);
+}
+
+.slick-arrow.slick-next {
+  left: rhythm(3);
+}
+
+.slick-prev.slick-arrow:before {
+  content: "\f053";
+}
+
+.slick-next.slick-arrow:before {
+  content: "\f054";
+}
+
+@include screen('sm') {
+  .slick-arrow {
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+
+    &:before {
+      font-size: 25px;
+    }
+
+    &.slick-next {
+      left: auto;
+      right: rhythm(1);
+    }
+  }
+}

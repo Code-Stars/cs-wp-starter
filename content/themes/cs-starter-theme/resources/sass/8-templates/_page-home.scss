@@ -1,0 +1,29 @@
+.page-template-home {
+
+  .post__title {
+    max-width: 50%;
+  }
+
+  .post__thumbnail {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+}
+
+@include screen('sm') {
+  .page-template-home {
+
+    .post__title {
+      max-width: none;
+    }
+
+    .post__thumbnail {
+      max-width: none;
+      margin: inherit;
+    }
+
+    .page__welcome {
+      color: #0D1D4B;
+    }
+  }
+}

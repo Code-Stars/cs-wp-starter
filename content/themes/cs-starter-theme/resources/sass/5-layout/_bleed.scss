@@ -1,0 +1,50 @@
+/* New version with breakpoints */
+.bleed-xs {
+  @include bleed(-0.5);
+}
+
+.bleed-xs-x0-5 {
+  @include bleed(-0.25);
+}
+
+@include screen('sm') {
+  .bleed-sm-x0 {
+    @include bleed(0);
+  }
+
+  .bleed-sm {
+    @include bleed(-0.5);
+  }
+
+  .bleed-sm-x0-5 {
+    @include bleed(-0.25);
+  }
+}
+
+@include screen('md') {
+  .bleed-md-x0 {
+    @include bleed(0);
+  }
+
+  .bleed-md {
+    @include bleed(-0.5);
+  }
+
+  .bleed-md-x0-5 {
+    @include bleed(-0.25);
+  }
+}
+
+@include screen('lg') {
+  .bleed-lg-x0 {
+    @include bleed(0);
+  }
+
+  .bleed-lg {
+    @include bleed(-0.5);
+  }
+
+  .bleed-lg-x0-5 {
+    @include bleed(-0.25);
+  }
+}

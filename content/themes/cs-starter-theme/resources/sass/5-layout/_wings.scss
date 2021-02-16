@@ -1,0 +1,25 @@
+.wings {
+  padding-left: percentage(1/12);
+  padding-right: percentage(1/12);
+}
+
+@include screen('sm') {
+  .wings {
+    padding-left: percentage(2/12);
+    padding-right: percentage(2/12);
+  }
+}
+
+@include screen('md') {
+  .wings {
+    padding-left: percentage(3/12);
+    padding-right: percentage(3/12);
+  }
+}
+
+@include screen('lg') {
+  .wings {
+    padding-left: percentage(4/12);
+    padding-right: percentage(4/12);
+  }
+}

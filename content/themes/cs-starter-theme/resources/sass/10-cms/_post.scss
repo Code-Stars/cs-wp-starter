@@ -1,0 +1,67 @@
+.post {
+  // content.php
+
+  &__posted-on {
+    @include text-shadow(2px, 2px, 3px, rgba(0, 0, 0, .2));
+    color: #fff;
+  }
+
+  &__title {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__poster {
+    @include background-size(cover);
+    position: relative;
+    height: 300px;
+    width: 100%;
+
+    .content-wrapper {
+      height: 100%;
+    }
+  }
+
+  &__entry-footer {
+    @include text-shadow(2px, 2px, 0px, rgba(40, 40, 40, 1));
+    @include linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    min-height: 50px;
+    padding-top: rhythm(2);
+  }
+
+  &-nav {
+    display: block;
+    font-size: 0;
+    width: 100%;
+
+    li {
+      display: inline-block;
+      width: 50%;
+      font-size: $base-font-size;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.post--single {
+  // single.php
+
+  .post__title {
+    @include text-shadow(2px, 2px, 3px, rgba(0, 0, 0, .2));
+    color: #fff;
+  }
+
+  .cat-links, .tag-links {
+    display: inline-block;
+    margin-right: rhythm(1);
+  }
+}

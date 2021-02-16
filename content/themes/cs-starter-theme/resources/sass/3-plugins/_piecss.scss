@@ -1,0 +1,212 @@
+///
+/// The default line-height for your project. This is translated to the final unit of output using the [$line-height-unit](./#line-height-unit) variable.
+///
+/// @since 0.1
+///
+/// @type {Number}
+///
+$default-line-height: 24px !default;
+
+// Rhythm settings
+
+// Vertical measurements like line-height and %-top and %-bottom are factors of rhythm
+
+///
+/// This measure is used to calculare vertical measurements like line-height and top and bottom paddings and margins. It defaults to the $default-line-height but some prefer to set it to a smaller value, like 1/2 or 1/3 times the $default-line-height.
+///
+/// @since 0.1
+///
+/// @type {Number}
+///
+$rhythm: 1rem;
+//$rhythm: $default-line-height !default;
+
+///
+/// Gutter widths are based on the vertical [rhythm](./#variable-rhythm) and default to 2*$rhythm. Gutters are implemented using the [gutter mixin](./#mixin-gutters) and are expressed in factors of this measure (usually 1/2).
+///
+/// @since 0.1
+///
+/// @type {Number}
+///
+$gutter-width: 2*$rhythm !default;
+
+///
+/// The default line-height for your project. This is translated to the final unit of output using the [$line-height-unit](./#line-height-unit) variable.
+///
+/// @since 0.1
+///
+/// @type {Number}
+///
+$default-line-height: 24px !default;
+
+@mixin gutters($fraction: 1/2, $use-margin: false) {
+  $both: length($fraction);
+
+  $left: $fraction;
+  $right: $fraction;
+
+  @if $both > 1 {
+    $left: nth($fraction, 1);
+    $right: nth($fraction, 2);
+  }
+
+  @if ($use-margin) {
+    @if $left != false {
+      margin-left: $gutter-width * $left;
+    }
+    @if $right != false {
+      margin-right: $gutter-width * $right;
+    }
+  } @else {
+    @if $left != false {
+      padding-left: $gutter-width * $left;
+    }
+    @if $right != false {
+      padding-right: $gutter-width * $right;
+    }
+  }
+}
+
+///
+/// Mixin to reverse padding on a container.
+/// Use it to remove padded column spacing on columns, helpful when nesting columns and when applying backgrounds.
+///
+/// @since 0.1
+///
+/// @param {Number} $fraction (1/2) - A fraction, e.g. 1/2
+///
+
+@mixin bleed($fraction: -1/2) {
+  @include gutters($fraction, true);
+}
+
+$base-font-size: 16px !default;
+// The distance between text baselines (vertical rhythm) in pixels.
+
+//$base-line-height: 24px !default;
+//$rhythm-unit: 'em' !default;
+
+$base-line-height: 1rem !default;
+$rhythm-unit: 'rem' !default;
+
+// Calculate rhythm units.
+@function rhythm($lines: 1, $font-size: $base-font-size, $offset: 0) {
+  $rhythm: convert-length($lines * $base-line-height - $offset, $rhythm-unit, $font-size);
+  @return $rhythm;
+}
+
+// Convert any CSS <length> or <percentage> value to any another.
+//
+// @param $length
+//   A css <length> or <percentage> value
+//
+// @param $to-unit
+//   String matching a css unit keyword, e.g. 'em', '%', etc.
+//
+// @param $from-context
+//   When converting from relative units, the absolute length (in px) to
+//   which $length refers (e.g. for $lengths in em units, would normally be the
+//   font-size of the current element).
+//
+// @param $to-context
+//   For converting to relative units, the absolute length in px to which the
+//   output value will refer. Defaults to the same as $from-context, since it is
+//   rarely needed.
+@function convert-length(
+  $length,
+  $to-unit,
+  $from-context: $base-font-size,
+  $to-context: $from-context
+) {
+
+  $from-unit: unit($length);
+
+  // Optimize for cases where `from` and `to` units are accidentally the same.
+  @if $from-unit == $to-unit {
+    @return $length;
+  }
+
+  // Context values must be in px so we can determine a conversion ratio for
+  // relative units.
+  @if unit($from-context) != 'px' {
+    @warn "Paremeter $from-context must resolve to a value in pixel units.";
+  }
+  @if unit($to-context) != 'px' {
+    @warn "Parameter $to-context must resolve to a value in pixel units.";
+  }
+
+  // Convert input length to pixels
+  $px-length: $length;
+
+  @if $from-unit != 'px' {
+    // Convert relative units using the from-context parameter.
+    @if $from-unit == 'em' {
+      $px-length: $length * $from-context / 1em
+    } @else if $from-unit == 'rem' {
+      $px-length: $length * $base-font-size / 1rem
+    } @else if $from-unit == '%' {
+      $px-length: $length * $from-context / 100%
+    } @else if $from-unit == 'ex' {
+      $px-length: $length * $from-context / 2ex
+    }
+      // Convert absolute units using Sass' conversion table.
+    @else if $from-unit == 'in'  or
+						 $from-unit == 'mm'  or
+						 $from-unit == 'cm'  or
+						 $from-unit == 'pt'  or
+						 $from-unit == 'pc' {
+      $px-length: 0px + $length
+    }
+      // Certain units can't be converted.
+    @else if $from-unit == 'ch'  or
+						 $from-unit == 'vw'  or
+						 $from-unit == 'vh'  or
+						 $from-unit == 'vmin' {
+      @warn "#{$from-unit} units can't be reliably converted; Returning original value.";
+      @return $length;
+    } @else {
+      @warn "#{$from-unit} is an unknown length unit. Returning original value.";
+      @return $length;
+    }
+  }
+
+  // Convert length in pixels to the output unit
+  $output-length: $px-length;
+  @if $to-unit != 'px' {
+    // Relative units
+    @if $to-unit == 'em' {
+      $output-length: $px-length * 1em / $to-context
+    } @else if $to-unit == 'rem' {
+      $output-length: $px-length * 1rem / $base-font-size
+    } @else if $to-unit == '%' {
+      $output-length: $px-length * 100% / $to-context
+    } @else if $to-unit == 'ex' {
+      $output-length: $px-length * 2ex / $to-context
+    }
+      // Absolute units
+    @else if $to-unit == 'in' {
+      $output-length: 0in + $px-length
+    } @else if $to-unit == 'mm' {
+      $output-length: 0mm + $px-length
+    } @else if $to-unit == 'cm' {
+      $output-length: 0cm + $px-length
+    } @else if $to-unit == 'pt' {
+      $output-length: 0pt + $px-length
+    } @else if $to-unit == 'pc' {
+      $output-length: 0pc + $px-length
+    }
+      // Non-convertible units
+    @else if $to-unit == 'ch'  or
+						 $to-unit == 'vw'  or
+						 $to-unit == 'vh'  or
+						 $to-unit == 'vmin' {
+      @warn "#{$to-unit} units can't be reliably converted; Returning original value.";
+      @return $length;
+    } @else {
+      @warn "#{$to-unit} is an unknown length unit. Returning original value.";
+      @return $length;
+    }
+  }
+
+  @return $output-length;
+}

@@ -1,0 +1,39 @@
+.main-menu-sub {
+  display: none;
+
+  li a {
+    color: $theme-color-1;
+    font-size: 0.8138em; /* 13px*/
+    line-height: 30px !important;
+  }
+}
+
+@include screen('md') {
+
+  .main-menu-sub {
+    position: absolute;
+    margin-left: -9999em;
+    z-index: 5;
+    display: block;
+    left: 0;
+    top: 48px;
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 24px;
+    width: 185px;
+    background-color: #fff;
+    border-bottom: solid 3px $theme-color-1;
+    padding-left: 12px;
+
+    li a {
+      color: #1D1D1B;
+      font-size: 0.8138em; /* 13px*/
+    }
+
+    .main-menu > li:hover & {
+      display: block;
+      margin-left: 0;
+    }
+  }
+}
+

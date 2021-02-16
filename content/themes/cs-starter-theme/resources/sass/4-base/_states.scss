@@ -1,0 +1,64 @@
+.is-relative {
+  position: relative !important;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-block {
+  display: block !important;
+}
+
+@include screen('xs') {
+
+  .show-mobile {
+    display: block;
+  }
+
+  .show-tablet {
+    display: none;
+  }
+
+  .show-desktop {
+    display: none;
+  }
+
+  .show-mobile.show-tablet {
+    display: block;
+  }
+}
+
+@include screen('sm') {
+
+  .show-mobile {
+    display: none;
+  }
+
+  .show-desktop {
+    display: none;
+  }
+
+  .show-tablet {
+    display: block;
+  }
+}
+
+@include screen('md') {
+
+  .show-mobile {
+    display: none;
+  }
+
+  .show-tablet {
+    display: none;
+  }
+
+  .show-desktop {
+    display: block;
+  }
+
+  .show-mobile.show-tablet {
+    display: none;
+  }
+}

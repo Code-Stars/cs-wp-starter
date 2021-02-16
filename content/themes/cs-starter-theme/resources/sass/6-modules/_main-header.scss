@@ -1,0 +1,21 @@
+.main-header {
+  background-color: $theme-color-6;
+  padding: rhythm(1/2) 0;
+  margin-bottom: rhythm(2);
+
+  &__title a {
+    color: $font-initial-color;
+  }
+}
+
+@include screen('sm') {
+
+  .main-header {
+  }
+}
+
+@include screen('md') {
+
+  .main-header {
+  }
+}

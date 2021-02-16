@@ -1,0 +1,36 @@
+//  ==========================================================================
+//  SASS ARCHITECTURE "CodeStars Starter Theme" - By https://github.com/Code-Stars/
+//  ==========================================================================
+
+// settings - settings for colors, breakpoints, fonts, etc.
+@import "1-settings/settings";
+
+// utilities - useful tools
+@import "2-utilities/utilities";
+
+// plugins - modifications for external plugins
+@import "3-plugins/plugins";
+
+// base - basic HTML markup
+@import "4-base/base";
+
+// layout - grid system
+@import "5-layout/layout";
+
+// modules - >> BUILD WEBSITE HERE <<
+@import "6-modules/modules";
+
+// effects - contains CSS animations
+@import "7-effects/effects";
+
+// templates for characterizing pages
+@import "8-templates/templates";
+
+// generic - modules that are always there
+@import "9-generic/generic";
+
+// cms - default styling for Wordpress' standard elements
+@import "10-cms/cms";
+
+// flexible-content - styling for flexible content blocks
+@import "11-flexible-content/flexible-content";

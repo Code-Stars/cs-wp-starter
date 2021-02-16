@@ -1,0 +1,99 @@
+/* Title styling */
+@mixin title-h1($font-context-size: $font-initial-size) {
+  font-family: $font-initial-title-family;
+  color: $theme-color-1;
+  font-weight: 600;
+  font-size: em(24px, $font-context-size);
+  line-height: 31px;
+
+  @include screen('sm') {
+    font-size: em(42px, $font-context-size);
+    line-height: 38px;
+  }
+}
+
+@mixin title-h2($font-context-size: $font-initial-size) {
+  font-family: $font-initial-title-family;
+  color: $theme-color-1;
+  font-weight: 600;
+  font-size: em(28px, $font-context-size);
+  line-height: 31px;
+
+  @include screen('sm') {
+    font-size: em(34px, $font-context-size);
+    line-height: 31px;
+  }
+}
+
+@mixin title-h3($font-context-size: $font-initial-size) {
+  font-family: $font-initial-title-family;
+  color: $font-initial-color;
+  font-weight: 600;
+  font-size: em(28px, $font-context-size);
+  line-height: 31px;
+
+  @include screen('sm') {
+    font-size: em(20px, $font-context-size);
+    line-height: 31px;
+  }
+}
+
+@mixin title-h4($font-context-size: $font-initial-size) {
+  font-family: $font-initial-title-family;
+  color: $font-initial-color;
+  font-weight: 600;
+  font-size: em(28px, $font-context-size);
+  line-height: 31px;
+
+  @include screen('sm') {
+    font-size: em(20px, $font-context-size);
+    line-height: 31px;
+  }
+}
+
+@mixin title-h5($font-context-size: $font-initial-size) {
+  font-family: $font-initial-title-family;
+  color: $font-initial-color;
+  font-weight: 600;
+  font-size: em(28px, $font-context-size);
+  line-height: 31px;
+
+  @include screen('sm') {
+    font-size: em(20px, $font-context-size);
+    line-height: 31px;
+  }
+}
+
+@mixin title-h6($font-context-size: $font-initial-size) {
+  font-family: $font-initial-title-family;
+  color: $font-initial-color;
+  font-weight: 600;
+  font-size: em(28px, $font-context-size);
+  line-height: 31px;
+
+  @include screen('sm') {
+    font-size: em(20px, $font-context-size);
+    line-height: 31px;
+  }
+}
+
+.title {
+  &-h1 {
+    @include title-h1();
+  }
+  &-h2 {
+    @include title-h2();
+  }
+  &-h3 {
+    @include title-h3();
+  }
+  &-h4 {
+    @include title-h4();
+  }
+  &-h5 {
+    @include title-h5();
+  }
+  &-h6 {
+    @include title-h6();
+  }
+}

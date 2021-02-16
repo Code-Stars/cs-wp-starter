@@ -1,0 +1,33 @@
+{
+  "title": "Privacyverklaring",
+  "pathLogo": "/content/uploads/2019/03/BlueDragon_Logo_SC_colour_rgb_WEBSITE_01_64px.svg",
+  "privacyUrl": "https://bluedragon-om.nl/privacy",
+  "defaultLang": "nl",
+  "company": {
+    "name": "Blue Dragon Strategy & Concept",
+    "email": "mail@bluedragon.nl",
+    "details": {
+      "url": "https://www.bluedragon-sc.nl",
+      "address": "Mammoet 2, 5236 NV s-Hertogenbosch, Nederland",
+      "phone": "+31 (0) 73 720 07 10"
+    }
+  },
+  "nl": {
+    "intro": "Frans Wijnenga is de Functionaris Gegevensbescherming van Blue Dragon Online Marketing.<br /> Hij is te bereiken via f.wijnenga@bluedragon.nl.",
+    "personalDetails": [
+      "Voor- en achternaam",
+      "Adresgegevens",
+      "E-Mail"
+    ],
+    "personalDetailsProcess": [
+      "U te kunnen benaderen en te kunnen voorzien van de door u opgevraagde informatie"
+    ],
+    "personalDetailsSaveTime": [
+      "Persoonsgegevens ingevuld na een aanvraag in het contactformulier worden maximaal twee jaar bewaard om u te kunnen benaderen en te kunnen voorzien van de door u opgevraagde informatie."
+    ],
+    "security": [
+      "TLS (voorheen SSL) Wij versturen uw gegevens via een beveiligde internetverbinding. Dit kunt u zien aan de adresbalk \"https\" en het hangslotje in de adresbalk.",
+      "SPF is een internetstandaard die wij gebruiken om te voorkomen dat u uit onze naam e-mails ontvangt die virussen bevatten, spam zijn of bedoelt zijn om persoonlijke (inlog)gegevens te bemachtigen."
+    ]
+  }
+}

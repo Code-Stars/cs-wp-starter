@@ -1,0 +1,36 @@
+// These are the bricks that make up
+// a website design.
+
+// menu
+@import "main-menu";
+@import "main-menu-item";
+@import "main-menu-sub";
+
+@import "footer-menu";
+
+// page
+@import "main-header";
+@import "main-footer";
+@import "main-logo";
+@import "section";
+@import "title";
+@import "fc-region";
+
+// forms
+@import "form";
+@import "button";
+
+// features
+@import "slider";
+@import "comment";
+
+// listing
+@import "tile";
+@import "list";
+@import "window";
+
+// other
+@import "gallery";
+@import "visual";
+@import "figure";
+@import "badge";

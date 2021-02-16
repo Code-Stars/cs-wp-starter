@@ -1,0 +1,11 @@
+//  ==========================================================================
+//  Breakpoint settings
+//  ==========================================================================
+
+// For the mixin version screen()
+$breakpoints: (
+        'xs': (max-width: 48em), // 768px
+        'sm': (min-width: 48em), // 768px
+        'md': (min-width: 62em), // 992px
+        'lg': (mix-width: 75em) // 1200px
+) !default;

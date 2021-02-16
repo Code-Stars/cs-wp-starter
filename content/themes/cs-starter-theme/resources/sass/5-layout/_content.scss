@@ -1,0 +1,47 @@
+.content-wrapper {
+  margin: 0 auto;
+  position: relative;
+  max-width: rem(1700px);
+
+  &--fill {
+    max-width: none;
+  }
+
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--small {
+    max-width: rem(800px);
+  }
+
+  &--very-small {
+    max-width: rem(700px);
+  }
+
+  &--tiny {
+    max-width: rem(375px);
+  }
+
+  &--large {
+    max-width: rem(1200px);
+  }
+
+  &--huge {
+    max-width: rem(1400px);
+  }
+
+  &--collapse {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &--bg {
+    background-color: #fff;
+  }
+}
+
+.site {
+  overflow: hidden;
+}

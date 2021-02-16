@@ -1,0 +1,57 @@
+.footer-menu {
+  width: 100%;
+
+  &__item {
+    text-align: center;
+    font-size: em(16px);
+    padding: 0;
+    line-height: 1.5;
+  }
+
+  &__link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: rhythm(1/4) 0;
+  }
+}
+
+@include screen('xs') {
+  .menu-footer-menu-container {
+    @include bleed;
+  }
+}
+
+@include screen('md') {
+  .footer-menu {
+
+    &__item {
+      text-align: left;
+      line-height: 64px;
+    }
+
+    &__link {
+      padding: 0;
+
+      &:hover {
+        color: $theme-color-1;
+        text-shadow: none;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/* Menu specific styling */
+#menu-footer-menu-1 {
+
+}
+
+#menu-footer-menu-2 {
+
+}
+
+#menu-footer-menu-3 {
+  border-bottom: none;
+  padding-bottom: 0;
+}

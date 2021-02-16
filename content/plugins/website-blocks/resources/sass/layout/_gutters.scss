@@ -1,0 +1,40 @@
+.gutters {
+  @include gutters(1/2);
+}
+
+.gutters--double {
+  @include gutters(1);
+}
+
+.gutters--half {
+  @include gutters(1/4);
+}
+
+.gutters--fourth {
+  @include gutters(1/8);
+}
+
+.gutter-left {
+  padding-left: rhythm(1/2);
+}
+
+.gutter-left--half {
+  padding-left: rhythm(1/4);
+}
+
+.gutter-left--double {
+  padding-left: rhythm(1);
+}
+
+.gutter-right {
+  padding-right: rhythm(1/2);
+}
+
+.gutter-right--double {
+  padding-right: rhythm(1);
+}
+
+.gutters--vertical {
+  padding-top: rhythm(1/4);
+  padding-bottom: rhythm(1/4);
+}

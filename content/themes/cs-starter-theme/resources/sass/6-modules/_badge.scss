@@ -1,0 +1,15 @@
+.badge {
+  //@include border-radius(3px);
+  display: inline;
+  background-color: $theme-color-1;
+  padding: rhythm(1/5) rhythm(1/2);
+  color: #fff;
+  text-decoration: none;
+  font-size: em(13px);
+  text-transform: lowercase;
+
+  &:hover {
+    background-color: lighten($theme-color-1, 10%);
+    color: #fff;
+  }
+}

@@ -1,0 +1,15 @@
+/*
+ * Wordpress core style modification.
+ */
+@import "page";
+@import "post";
+@import "wp-block";
+
+/* create space for the admin bar */
+body.admin-bar {
+  padding-top: 46px;
+
+  @include screen('sm') {
+    padding-top: 32px;
+  }
+}

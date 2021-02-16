@@ -1,0 +1,35 @@
+.fc-title-text-cta {
+
+  &__title {
+    display: block;
+    overflow: hidden;
+  }
+
+  &__text {
+    display: block;
+    overflow: hidden;
+    margin-bottom: rhythm(1);
+  }
+}
+
+@include screen('sm') {
+
+  .fc-title-text-cta {
+    &__title {
+      height: 62px;
+    }
+
+    &__text {
+      min-height: 230px;
+    }
+  }
+}
+
+.fc-title-text-cta--1-columns,
+.fc-title-text-cta--2-columns {
+  /* reset container height for 1 column display */
+  .fc-title-text-cta__title,
+  .fc-title-text-cta__text {
+    height: auto;
+  }
+}

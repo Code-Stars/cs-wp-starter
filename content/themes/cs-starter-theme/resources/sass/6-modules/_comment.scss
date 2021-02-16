@@ -1,0 +1,36 @@
+.comment {
+  background-color: $theme-color-3;
+  margin-bottom: rhythm(1/2);
+  padding: rhythm(1/2) 0;
+  color: #fff;
+
+  &-body {
+    position: relative;
+    margin: rhythm(1/2);
+  }
+
+  &-author {
+    display: inline-block;
+    height: 32px;
+    vertical-align: top;
+
+    span, b {
+      vertical-align: top;
+    }
+  }
+
+  &-meta {
+    height: 32px;
+    margin-bottom: rhythm(1/2);
+  }
+
+  &-metadata {
+    display: inline-block;
+  }
+
+  &-edit-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

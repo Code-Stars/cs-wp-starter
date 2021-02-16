@@ -1,0 +1,24 @@
+.fc-contact-us {
+
+  &.is-closed {
+
+    #contact-form {
+      display: none;
+    }
+
+    #btn-open {
+      display: block;
+    }
+  }
+
+  &.is-open {
+    #btn-close {
+      display: block;
+    }
+  }
+
+  .container--master {
+    max-width: 400px;
+  }
+}
+

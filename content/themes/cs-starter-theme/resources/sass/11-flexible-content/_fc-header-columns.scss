@@ -1,0 +1,140 @@
+.fc-header-columns {
+  @include background-size(cover);
+  @include box-sizing;
+  padding: rhythm(1);
+  background-position: center center;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 600px;
+  margin-bottom: calc(150px + 3rem);
+
+  .content-wrapper {
+    height: 100%;
+  }
+
+  &__title {
+    font-size: em(48px);
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-top: 100px;
+  }
+
+  &__text {
+    font-weight: 800;
+  }
+
+  &__container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: calc(-150px);
+  }
+}
+
+.fc-header-columns-box {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+  }
+
+  &__inner {
+    @include box-sizing;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: rhythm(1.5);
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    background-color: #97c4a3;
+  }
+
+  &--theme-1 {
+    .fc-header-columns-box__inner {
+      background-color: #97c4a3;
+    }
+
+    &::before {
+      background-image: url('../../../assets/images/pattern.png');
+      margin-left: rhythm(-1.5);
+      margin-top: rhythm(-1.5);
+    }
+  }
+
+  &--theme-2 {
+    .fc-header-columns-box__inner {
+      background-color: #cfe1c7;
+    }
+  }
+
+  &--theme-3 {
+    .fc-header-columns-box__inner {
+      background-color: #dde5b2;
+    }
+
+    &::before {
+      background-image: url('../../../assets/images/pattern.png');
+      margin-left: rhythm(1.5);
+      margin-top: rhythm(1.5);
+    }
+  }
+
+  &__title {
+    font-size: em(24px);
+    line-height: 1;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: em(14px);
+    font-weight: 800;
+  }
+
+  &__button {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    padding: 0 rhythm(1.5);
+    height: 50px;
+    min-width: 150px;
+    font-size: em(14px);
+    text-transform: lowercase;
+    line-height: 50px;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      font-family: "Font Awesome\ 5 Free", sans-serif;
+      font-weight: 900;
+      content: '\f054';
+      font-size: 10px;
+      right: rhythm(1.5);
+    }
+  }
+
+  &__footer {
+    position: absolute;
+    right: rhythm(1.5);
+    bottom: rhythm(1.5);
+  }
+}
+
+@include screen('sm') {
+  .fc-header-columns {
+  }
+}

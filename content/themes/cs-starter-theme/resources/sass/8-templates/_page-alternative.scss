@@ -1,0 +1,43 @@
+body.page-template-page-alternative {
+
+  background-color: $theme-color-1;
+  color: #fff;
+
+  .post__content h2 {
+
+  }
+
+  .post__title {
+    color: $theme-color-1;
+  }
+
+  .fc-slider__item {
+    height: 600px;
+  }
+
+  a {
+    color: $theme-color-1;
+  }
+
+  .flap-left,
+  .flap-right {
+    background-color: $theme-color-1;
+  }
+
+  .flap-visual {
+    //background-image: url('../../../assets/images/flap-alt.png') !important;
+  }
+}
+
+@include screen('xs') {
+  body.page-template-page-alternative {
+
+    .fc-slider {
+      height: 400px;
+
+      &__item {
+        height: 400px;
+      }
+    }
+  }
+}

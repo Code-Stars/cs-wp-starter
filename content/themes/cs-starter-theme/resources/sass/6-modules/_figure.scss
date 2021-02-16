@@ -1,0 +1,27 @@
+.figure {
+  display: block;
+
+  img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &--cover {
+    @include background-size(cover);
+    background-position: center center;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    &:hover {
+      @include opacity(0.8);
+    }
+  }
+}

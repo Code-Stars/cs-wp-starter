@@ -1,0 +1,54 @@
+SetEnv BASE_PATH /
+
+# Block WordPress xmlrpc.php requests
+<Files xmlrpc.php>
+    order allow,deny
+    deny from all
+</Files>
+
+# BEGIN move Wordpress login to /cms
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # GET verzoeken die NIET OK zijn (dankzij ontbreken query string)
+    RewriteCond %{REQUEST_URI} ^/wordpress/wp-login\.php(.*)$
+    RewriteCond %{QUERY_STRING} !(.*cms=unlocked.*)
+    RewriteCond %{REQUEST_METHOD} !POST
+    RewriteRule ^(.*)$ ./content/custom-login.php [L]
+
+    # POST verzoeken die NIET OK zijn (dankzij ontbreken referer)
+    RewriteCond %{REQUEST_URI} ^/wordpress/wp-login\.php(.*)$
+    RewriteCond %{HTTP_REFERER} !(.*cms=unlocked.*)
+    RewriteCond %{REQUEST_METHOD} POST
+    RewriteRule ^(.*)$ ./content/custom-login.php [L]
+
+    # fix logout action
+    RewriteCond %{REQUEST_URI} ^/content/custom-login\.php(.*)$
+    RewriteCond %{QUERY_STRING} action=logout [OR]
+    RewriteCond %{QUERY_STRING} loggedout=true
+    RewriteRule ^(.*)$ /cms?%{QUERY_STRING} [R=302,NC,L]
+
+    #cms=unlocked maakt het OK om in te loggen
+    RewriteRule ^cms wordpress/wp-login.php?%{QUERY_STRING}&cms=unlocked [R=302,NC,L]
+</IfModule>
+# END move Wordpress login to /cms
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+# Block spammers example - we use the plugin limit login attempts reloaded for this now.
+# Deny from {ip}

@@ -1,0 +1,90 @@
+/* New version with breakpoints */
+
+.gutters-x0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.gutters-x0--outside {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.gutters-xs {
+  padding-left: rhythm(1);
+  padding-right: rhythm(1);
+}
+
+.gutters-xs--outside {
+  margin-left: rhythm(1);
+  margin-right: rhythm(1);
+}
+
+.gutters-xs-x0-5 {
+  padding-left: rhythm(1/2);
+  padding-right: rhythm(1/2);
+}
+
+.gutters-xs-x0-5--outside {
+  margin-left: rhythm(1/2);
+  margin-right: rhythm(1/2);
+}
+
+.gutters-xs-x2 {
+  padding-left: rhythm(2);
+  padding-right: rhythm(2);
+}
+
+.gutters-xs-x2--outside {
+  margin-left: rhythm(2);
+  margin-right: rhythm(2);
+}
+
+@include screen('sm') {
+
+}
+
+@include screen('md') {
+
+}
+
+@include screen('lg') {
+
+}
+
+/** Classic version */
+.gutters {
+  @include gutters(1/2);
+}
+
+.gutters--double {
+  @include gutters(1);
+}
+
+.gutters--half {
+  @include gutters(1/4);
+}
+
+.gutters--fourth {
+  @include gutters(1/8);
+}
+
+.gutter-left {
+  padding-left: rhythm(1/2);
+}
+
+.gutter-left--half {
+  padding-left: rhythm(1/4);
+}
+
+.gutter-left--double {
+  padding-left: rhythm(1);
+}
+
+.gutter-right {
+  padding-right: rhythm(1/2);
+}
+
+.gutter-right--double {
+  padding-right: rhythm(1);
+}

@@ -1,0 +1,13 @@
+.fc-region {
+  border-bottom: dashed 2px #efefef;
+  background-color: #fff;
+
+  &.fc-parallax {
+    background-color: transparent;
+  }
+
+  &--padding {
+    padding-top: rhythm(2);
+    padding-bottom: rhythm(2);
+  }
+}

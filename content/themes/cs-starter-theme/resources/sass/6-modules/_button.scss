@@ -1,0 +1,38 @@
+.button {
+  @include box-sizing();
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  height: 43px;
+  line-height: 43px;
+  background-color: $theme-color-1;
+  color: #fff;
+  font-size: em(18px);
+  text-decoration: none;
+  //text-indent: 12px;
+  margin: 0;
+  padding: 0 rhythm(2);
+  overflow-y: hidden;
+  border: 0;
+  text-transform: uppercase;
+
+  .icon {
+    color: #fff;
+  }
+
+  &--full {
+    width: 100%;
+    max-width: none;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &:hover {
+    color: #fff;
+    cursor: pointer;
+    background-color: lighten($theme-color-1, 10%);
+    border-bottom: 0;
+  }
+}

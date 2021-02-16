@@ -1,0 +1,21 @@
+.fc-poster {
+  @include background-size(cover);
+  position: relative;
+  background-position: center;
+  height: 250px;
+  width: 100%;
+
+  &__figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+    font-size: em(20px);
+    text-transform: uppercase;
+    padding: rhythm(1) 0;
+  }
+}

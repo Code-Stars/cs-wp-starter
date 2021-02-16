@@ -1,0 +1,89 @@
+/* New version with breakpoints */
+.left-xs {
+  text-align: left;
+}
+
+.left-xs--float {
+  float: left;
+}
+
+.right-xs {
+  text-align: right;
+}
+
+.right-xs--float {
+  float: right;
+}
+
+.center-xs {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@include screen('sm') {
+  .left-sm {
+    text-align: left;
+  }
+
+  .left-sm--float {
+    float: left;
+  }
+
+  .right-sm {
+    text-align: right;
+  }
+
+  .right-sm--float {
+    float: right;
+  }
+
+  .center-sm {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@include screen('md') {
+  .left-md {
+    text-align: left;
+  }
+
+  .left-md--float {
+    float: left;
+  }
+
+  .right-md {
+    text-align: right;
+  }
+
+  .right-md--float {
+    float: right;
+  }
+
+  .center-md {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Classic version */
+.left {
+  text-align: left;
+}
+
+.center {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+
+  &-float {
+    float: right;
+  }
+}
